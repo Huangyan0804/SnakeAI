@@ -52,7 +52,7 @@ void Snake::show_snake()
     SetConsoleTextAttribute(handle, 10); // 设置绿色
     for (auto i = this->snake_body.begin(); i != this->snake_body.end(); i++) {
         Show::gotoxy(i->x, i->y);
-        cout << "*";
+        cout << "O";
     }
     SetConsoleTextAttribute(handle, 7); // 恢复颜色
 }

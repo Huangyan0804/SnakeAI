@@ -123,12 +123,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AI.h" />
     <ClInclude Include="Food.h" />
     <ClInclude Include="GameSetting.h" />
     <ClInclude Include="Show.h" />
     <ClInclude Include="Snake.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AI.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="GameSetting.cpp" />
     <ClCompile Include="main.cpp" />

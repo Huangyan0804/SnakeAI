@@ -32,6 +32,7 @@ int main()
         food.show_food();
         snake.snake_erase();
         snake.is_eat_food(food);
+        food.show_food();
         snake.snake_move();
         snake.show_snake();
         if (!snake.is_alive()) {
