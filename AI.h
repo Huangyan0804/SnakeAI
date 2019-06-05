@@ -9,12 +9,17 @@
 #include <queue>
 #include <vector>
 using namespace std;
-
+struct Point {
+    int x, y;
+    Point(int a = 0, int b = 0)
+    {
+        x = a, y = b;
+    }
+};
 class AI {
-private:
-    
-
 public:
-
-
+    bool find_path_to_food(Point start, Point food);
+    bool find_path_to_tail(Point start, Point tail);
+    void temp_snake_move();
+    void go_any();
 };
