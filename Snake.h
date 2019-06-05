@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"

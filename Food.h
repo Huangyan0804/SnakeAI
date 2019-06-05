@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "GameSetting.h"
 #include <Windows.h>
 #include <conio.h>

@@ -1,4 +1,4 @@
-#include "Snake.h"
+ï»¿#include "Snake.h"
 #include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"
@@ -18,13 +18,13 @@ Snake::Snake()
     move_size.x = GameSetting::window_width - 30; // [1 , size.x]
     move_size.y = GameSetting::window_height - 1; // [1 ,size.y]
 
-    // ÒÆ¶¯·½ÏòÏòÓÒ
+    // ç§»åŠ¨æ–¹å‘å‘å³
     head_dir = 4;
 
     snake_live = true;
     Cor snake_head;
 
-    // ³õÊ¼ÉßÉí
+    // åˆå§‹è›‡èº«
     snake_head.x = move_size.x / 2;
     snake_head.y = move_size.y / 2;
     this->snake_body.push_back(snake_head);
@@ -49,12 +49,12 @@ bool Snake::is_eat_food(Food& f)
 void Snake::show_snake()
 {
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(handle, 10); // ÉèÖÃÂÌÉ«
+    SetConsoleTextAttribute(handle, 10); // è®¾ç½®ç»¿è‰²
     for (auto i = this->snake_body.begin(); i != this->snake_body.end(); i++) {
         Show::gotoxy(i->x, i->y);
         cout << "*";
     }
-    SetConsoleTextAttribute(handle, 7); // »Ö¸´ÑÕÉ«
+    SetConsoleTextAttribute(handle, 7); // æ¢å¤é¢œè‰²
 }
 
 void Snake::snake_move()

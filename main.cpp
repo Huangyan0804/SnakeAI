@@ -1,4 +1,4 @@
-#include "GameSetting.h"
+﻿#include "GameSetting.h"
 #include "Show.h"
 #include "Snake.h"
 #include "Food.h"

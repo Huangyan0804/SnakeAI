@@ -1,4 +1,4 @@
-#include "Food.h"
+ï»¿#include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"
 #include "Snake.h"
@@ -33,10 +33,10 @@ void Food::refresh_food(vector<Cor>& v)
 }
 void Food::show_food() {
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(handle, 12); // ÉèÖÃºìÉ«
+    SetConsoleTextAttribute(handle, 12); // è®¾ç½®çº¢è‰²
     Show::gotoxy(food_pos.x, food_pos.y);
     cout << "@";
-    SetConsoleTextAttribute(handle, 7); // »Ö¸´ÑÕÉ«
+    SetConsoleTextAttribute(handle, 7); // æ¢å¤é¢œè‰²
 }
 
 
