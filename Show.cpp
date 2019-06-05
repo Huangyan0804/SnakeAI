@@ -4,8 +4,10 @@
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
+#include <conio.h>
+#include <vector>
 #include <iostream>
-#include<fstream>
+#include <fstream>
 using namespace std;
 void Show::show_start()
 {
@@ -104,6 +106,10 @@ void Show::show_gameinfo()
     cout << "W: 上    S: 下" << endl;
     gotoxy(GameSetting::window_width - 22, 36);
     cout << "A: 左    D: 右" << endl;
+}
+
+void Show::show_game_over() {
+
 }
 
 void Show::gotoxy(int x, int y)

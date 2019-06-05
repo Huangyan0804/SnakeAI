@@ -1,10 +1,14 @@
 #include "GameSetting.h"
 #include <Windows.h>
+#include <conio.h>
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
+#include <iostream>
+#include <vector>
 using namespace std;
-int game_speed = 50;
+int game_speed = 100;
 int score = 0;
 void GameSetting::init()
 {
@@ -16,7 +20,7 @@ void GameSetting::init()
     system(buffer);
 
     srand((unsigned int)time(0));
-
-    int dx[4] = { -1, 0, 1, 0 };
-    int dy[4] = { 0, -1, 0, 1 };
+  
+    int dx[5] = { 0, 0, 0, 1, -1 };
+    int dy[5] = { 0, 1, -1, 0, 0 };
 }
