@@ -18,15 +18,18 @@
     <ClInclude Include="Show.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="GameInit.h">
+    <ClInclude Include="GameSetting.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameInit.cpp">
+    <ClCompile Include="Show.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Show.cpp">
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSetting.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
