@@ -6,5 +6,5 @@ public:
     const int window_width = 80;
     const int window_height = 40;
 
-    void init(); // ³õÊ¼»¯
+    void init(); // åˆå§‹åŒ–
 };
