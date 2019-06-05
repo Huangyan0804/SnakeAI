@@ -13,11 +13,21 @@
 bool AI::find_path_to_food(Point start, Point food) {
 
 }
+
 void AI::temp_snake_move() {
 
 }
+
 bool AI::find_path_to_tail(Point start, Point tail)
 {
+
+}
+
+Point AI::find_short_path(vector<Point>& tempsnake, int** map) {
+
+}
+
+Point AI::find_long_path(vector<Point>& tempsnake, int** map) {
 
 }
 
