@@ -1,18 +1,15 @@
-﻿#include "GameSetting.h"
+﻿#pragma once
+#include "GameSetting.h"
 #include "Show.h"
 #include "Snake.h"
 #include "Food.h"
-#include <Windows.h>
-#include <conio.h>
-#include <cstdio>
 #include <cstdlib>
-#include <ctime>
+#include <Windows.h>
 #include <fstream>
 #include <iostream>
-#include <vector>
 
 using namespace std;
-
+extern int game_speed;
 int main()
 {
 
@@ -23,7 +20,6 @@ int main()
     
     setting.init();
     food.refresh_food(snake.snake_body);
-    
     show.show_last_score();
     show.show_gameinfo();
     while (true) {

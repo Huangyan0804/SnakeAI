@@ -1,6 +1,13 @@
-﻿#pragma once
-#include <string>
-using namespace std;
+#pragma once
+#include <Windows.h>
+static void gotoxy(int x, int y)
+{
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD pos;
+    pos.X = x;
+    pos.Y = y;
+    SetConsoleCursorPosition(handle, pos);
+}
 class Show {
 
 public:
@@ -11,6 +18,6 @@ public:
     void show_last_score();
     void show_gameinfo();
     void show_game_over();
-    static void gotoxy(int x, int y); // move Cursor
+    
     
 };

@@ -1,89 +1,92 @@
-ï»¿#include "Show.h"
+#include "Show.h"
 #include "GameSetting.h"
-#include <Windows.h>
 #include <cstdio>
+#include <Windows.h>
 #include <cstdlib>
 #include <ctime>
 #include <conio.h>
-#include <vector>
 #include <iostream>
 #include <fstream>
 using namespace std;
+extern int game_speed;
+extern int score;
 void Show::show_start()
 {
     gotoxy(GameSetting::window_width / 2 - 10, GameSetting::window_height / 2 - 5);
-    cout << "è¯·é€‰æ‹©æ¸¸æˆæ¨¡å¼ï¼š" << endl;
+    cout << "ÇëÑ¡ÔñÓÎÏ·Ä£Ê½£º" << endl;
     gotoxy(GameSetting::window_width / 2 - 10, GameSetting::window_height / 2 - 3);
-    cout << "1. æ‰‹åŠ¨æ“ä½œæ¨¡å¼" << endl;
+    cout << "1. ÊÖ¶¯²Ù×÷Ä£Ê½" << endl;
     gotoxy(GameSetting::window_width / 2 - 10, GameSetting::window_height / 2 - 1);
-    cout << "2. AIæ™ºèƒ½æ¨¡å¼" << endl;
+    cout << "2. AIÖÇÄÜÄ£Ê½" << endl;
     gotoxy(GameSetting::window_width / 2 - 10, GameSetting::window_height / 2 + 1);
-    cout << "è¯·è¾“å…¥æ‚¨çš„é€‰æ‹©-> ";
+    cout << "ÇëÊäÈëÄúµÄÑ¡Ôñ-> ";
 }
 void Show::show_map()
 {
     gotoxy(0, 0);
-    // ä¸Šè¾¹æ¡†
+    // ÉÏ±ß¿ò
     for (int i = 0; i < GameSetting::window_width; i++) {
         if (i == 0)
-            cout << "â”";
+			cout << "#";
         else if (i == GameSetting::window_width - 1)
-            cout << "â”“";
+			cout << "#";
         else if (i == GameSetting::window_width - 29)
-            cout << "â”³";
+			cout << "#";
         else
-            cout << "â”";
+			cout << "#";
     }
-    // å·¦è¾¹æ¡†
+    // ×ó±ß¿ò
     for (int i = 1; i < GameSetting::window_height - 1; i++) {
         gotoxy(0, i);
-        cout << "â”ƒ";
+		cout << "#";
     }
 
-    // ä¸­é—´åˆ†ç•Œçº¿
+    // ÖÐ¼ä·Ö½çÏß
     for (int i = 1; i < GameSetting::window_height - 1; i++) {
         gotoxy(GameSetting::window_width - 29, i);
-        cout << "â”ƒ";
+		cout << "#";
     }
     for (int i = GameSetting::window_width - 29; i < GameSetting::window_width; i++) {
         gotoxy(i, GameSetting::window_height -10);
         if (i == GameSetting::window_width - 29)
-            cout << "â”£";
+			cout << "#";
         else
-            cout << "â”";
+			cout << "#";
     }
 
-    // å³è¾¹æ¡†
+    // ÓÒ±ß¿ò
     for (int i = 1; i < GameSetting::window_height - 1; i++) {
         gotoxy(GameSetting::window_width - 1, i);
-        cout << "â”ƒ";
+		cout << "#";
     }
 
-    // ä¸‹è¾¹æ¡†
+    // ÏÂ±ß¿ò
     gotoxy(0, GameSetting::window_height - 1);
     for (int i = 0; i < GameSetting::window_width; i++) {
         if (i == 0)
-            cout << "â”—";
+			cout << "#";
         else if (i == GameSetting::window_width - 1)
-            cout << "â”›";
+			cout << "#";
         else if (i == GameSetting::window_width - 29)
-            cout << "â”»";
+			cout << "#";
         else
-            cout << "â”";
+			cout << "#";
     }
 }
 void Show::show_score()
 {
+	
+	
     gotoxy(GameSetting::window_width - 22, 4);
-    cout << "å½“å‰æ¸¸æˆé€Ÿåº¦: " << 100 - game_speed / 10 << endl;
+    cout << "µ±Ç°ÓÎÏ·ËÙ¶È: " << 100 - game_speed / 10 << endl;
     gotoxy(GameSetting::window_width - 22, 6);
-    cout << "å½“å‰çŽ©å®¶åˆ†æ•°: " << score << endl;
+    cout << "µ±Ç°Íæ¼Ò·ÖÊý: " << score << endl;
 }
 
 void Show::show_last_score()
 {
     gotoxy(GameSetting::window_width - 22, 10);
-    cout << "åŽ†å²åˆ†æ•°æŽ’è¡Œæ¦œ: " << endl;
+    cout << "ÀúÊ··ÖÊýÅÅÐÐ°ñ: " << endl;
     int k = 1;
     int last_score[11] = { 0 };
     ifstream fin("last-score.txt");
@@ -101,22 +104,14 @@ void Show::show_last_score()
 void Show::show_gameinfo()
 {
     gotoxy(GameSetting::window_width - 22, 32);
-    cout << "æ¸¸æˆæ“ä½œè¯´æ˜Žï¼š" << endl;
+    cout << "ÓÎÏ·²Ù×÷ËµÃ÷£º" << endl;
     gotoxy(GameSetting::window_width - 22, 34);
-    cout << "W: ä¸Š    S: ä¸‹" << endl;
+    cout << "W: ÉÏ    S: ÏÂ" << endl;
     gotoxy(GameSetting::window_width - 22, 36);
-    cout << "A: å·¦    D: å³" << endl;
+    cout << "A: ×ó    D: ÓÒ" << endl;
 }
 
 void Show::show_game_over() {
 
 }
 
-void Show::gotoxy(int x, int y)
-{
-    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    COORD pos;
-    pos.X = x;
-    pos.Y = y;
-    SetConsoleCursorPosition(handle, pos);
-}

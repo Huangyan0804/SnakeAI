@@ -1,15 +1,13 @@
 ﻿#include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"
-#include "Snake.h"
-#include <Windows.h>
 #include <conio.h>
 #include <cstdio>
+#include <Windows.h>
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
 #include <iostream>
-#include <vector>
 using namespace std;
 
 Cor Food::get_food()
@@ -34,7 +32,7 @@ void Food::refresh_food(vector<Cor>& v)
 void Food::show_food() {
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(handle, 12); // 设置红色
-    Show::gotoxy(food_pos.x, food_pos.y);
+    gotoxy(food_pos.x, food_pos.y);
     cout << "@";
     SetConsoleTextAttribute(handle, 7); // 恢复颜色
 }

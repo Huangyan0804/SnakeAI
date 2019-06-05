@@ -1,15 +1,6 @@
 ﻿#pragma once
-#include "GameSetting.h"
-#include <Windows.h>
-#include <conio.h>
-#include <cstdio>
-#include <cstdlib>
-#include <ctime>
-#include <fstream>
-#include <iostream>
 #include <vector>
-using namespace std;
-
+#include"GameSetting.h"
 class Food {
 private:
     Cor food_pos;
@@ -17,6 +8,6 @@ private:
 public:
     Cor get_food();
     Food() {}
-    void refresh_food(vector<Cor> &v);
+    void refresh_food(std::vector<Cor> &v);
     void show_food();
 };

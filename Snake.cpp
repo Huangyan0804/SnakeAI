@@ -2,17 +2,16 @@
 #include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"
-#include <Windows.h>
 #include <conio.h>
+#include <Windows.h>
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
 #include <iostream>
-#include <vector>
 
 using namespace std;
-
+int score = 0;
 Snake::Snake()
 {
     move_size.x = GameSetting::window_width - 30; // [1 , size.x]
@@ -51,7 +50,7 @@ void Snake::show_snake()
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(handle, 10); // 设置绿色
     for (auto i = this->snake_body.begin(); i != this->snake_body.end(); i++) {
-        Show::gotoxy(i->x, i->y);
+        gotoxy(i->x, i->y);
         cout << "O";
     }
     SetConsoleTextAttribute(handle, 7); // 恢复颜色
@@ -87,7 +86,7 @@ void Snake::snake_move()
 
 void Snake::snake_erase()
 {
-    Show::gotoxy(snake_body.back().x, snake_body.back().y);
+    gotoxy(snake_body.back().x, snake_body.back().y);
     cout << " ";
 }
 bool Snake::is_alive()

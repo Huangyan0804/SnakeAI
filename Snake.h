@@ -1,15 +1,5 @@
 ﻿#pragma once
 #include "Food.h"
-#include "GameSetting.h"
-#include "Show.h"
-#include <Windows.h>
-#include <conio.h>
-#include <cstdio>
-#include <cstdlib>
-#include <ctime>
-#include <fstream>
-#include <iostream>
-#include <vector>
 using namespace std;
 
 class Snake {
