@@ -1,5 +1,8 @@
 #pragma once
+#include "GameSetting.h"
 #include <Windows.h>
+#include "Snake.h"
+using namespace std;
 static void gotoxy(int x, int y)
 {
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -12,12 +15,12 @@ class Show {
 
 public:
     
-    void show_start();
+    void show_start(Snake& snake);
     void show_map();
-    void show_score();
+    void show_score(Snake& s);
     void show_last_score();
     void show_gameinfo();
-    void show_game_over();
+    bool show_game_over();
     
     
 };

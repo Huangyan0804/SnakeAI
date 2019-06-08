@@ -79,6 +79,9 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <StackReserveSize>20971520</StackReserveSize>
+      <HeapReserveSize>20971520</HeapReserveSize>
+      <HeapCommitSize>20971520</HeapCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -90,6 +93,8 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <StackCommitSize>20971520</StackCommitSize>
+      <StackReserveSize>20971520</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -123,14 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AI.h" />
     <ClInclude Include="Food.h" />
     <ClInclude Include="GameSetting.h" />
     <ClInclude Include="Show.h" />
     <ClInclude Include="Snake.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AI.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="GameSetting.cpp" />
     <ClCompile Include="main.cpp" />

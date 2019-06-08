@@ -1,44 +1,49 @@
-﻿#pragma once
+#pragma once
+#include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"
 #include "Snake.h"
-#include "Food.h"
-#include <cstdlib>
 #include <Windows.h>
+#include <conio.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
 #include <fstream>
 #include <iostream>
+#include <queue>
+#include <tchar.h>
+#include <vector>
 
 using namespace std;
-extern int game_speed;
+
 int main()
 {
-
     GameSetting setting;
     Show show;
     Snake snake;
-    Food food;
     
     setting.init();
-    food.refresh_food(snake.snake_body);
+    show.show_start(snake);
+    show.show_map();
+    snake.food.show_food();
     show.show_last_score();
     show.show_gameinfo();
+
     while (true) {
-        show.show_map();
-        show.show_score();
-        food.show_food();
-        snake.snake_erase();
-        snake.is_eat_food(food);
-        food.show_food();
-        snake.snake_move();
-        snake.show_snake();
+        show.show_score(snake);
+        if (snake.get_model()) {
+            snake.man_make_move();
+        } else {
+            snake.ai_find_path();
+            snake.ai_listen_keboard();
+        }
         if (!snake.is_alive()) {
-            show.show_game_over();
-            break;
-		}
-            
-		
-        Sleep(game_speed);
+            if (show.show_game_over()) {
+                break;
+            }
+        }
+        Sleep(snake.get_speed());
     }
-    system("pause");
     return 0;
 }

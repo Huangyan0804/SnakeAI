@@ -138,7 +138,7 @@ def choose_longest_safe_move(psnake, pboard):
 # 虚拟操作，在tmpboard,tmpsnake中进行
 def is_tail_inside():
     global tmpboard, tmpsnake, food, tmpsnake_size
-    tmpboard[tmpsnake[tmpsnake_size-1]] = 0 # 虚拟地将蛇尾变为食物(因为是虚拟的，所以在tmpsnake,tmpboard中进行)
+    tmpboard[tmpsnake[tmpsnake_size-1]] = FOOD # 虚拟地将蛇尾变为食物(因为是虚拟的，所以在tmpsnake,tmpboard中进行)
     tmpboard[food] = SNAKE # 放置食物的地方，看成蛇身
     result = board_BFS(tmpsnake[tmpsnake_size-1], tmpsnake, tmpboard) # 求得每个位置到蛇尾的路径长度
     for i in range(4): # 如果蛇头和蛇尾紧挨着，则返回False。即不能follow_tail，追着蛇尾运动了
@@ -174,6 +174,7 @@ def any_possible_move():
     return best_move
     
 #转换数组函数
+# 使蛇身向后移动一格
 def shift_array(arr, size):
     for i in range(size, 0, -1):
         arr[i] = arr[i-1]
@@ -286,5 +287,5 @@ while True:
     if best_move != ERR: make_move(best_move)   
     else: break
     # 控制游戏速度
-    fpsClock.tick(200)#20看上去速度正好
+    fpsClock.tick(20)#20看上去速度正好
 print(score)#游戏结束后打印分数

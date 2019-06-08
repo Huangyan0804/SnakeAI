@@ -1,21 +1,35 @@
-ï»¿#include "Food.h"
+#pragma once
+#include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"
+#include <Windows.h>
 #include <conio.h>
 #include <cstdio>
-#include <Windows.h>
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
 #include <iostream>
+#include <queue>
+#include <vector>
 using namespace std;
+
 
 Cor Food::get_food()
 {
     return food_pos;
 }
 
-void Food::refresh_food(vector<Cor>& v)
+void Food::show_food()
+{
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(handle, 68); // ÉèÖÃºìÉ«
+    gotoxy(food_pos.x, food_pos.y);
+    cout << "@";
+    SetConsoleTextAttribute(handle, 7); // »Ö¸´ÑÕÉ«
+}
+
+
+void Food::refresh_food(vector<Cor> v)
 {
     food_pos.x = rand() % (GameSetting::window_width - 30) + 1;
     food_pos.y = rand() % (GameSetting::window_height - 2) + 1;
@@ -27,14 +41,5 @@ void Food::refresh_food(vector<Cor>& v)
             i = 0;
         }
     }
-
+    show_food();
 }
-void Food::show_food() {
-    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(handle, 12); // è®¾ç½®çº¢è‰²
-    gotoxy(food_pos.x, food_pos.y);
-    cout << "@";
-    SetConsoleTextAttribute(handle, 7); // æ¢å¤é¢œè‰²
-}
-
-

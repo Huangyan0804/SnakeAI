@@ -1,15 +1,25 @@
-ï»¿#pragma once
+#pragma once
+
+
+using namespace std;
+
 struct Cor {
-	int x, y;
-	Cor(int a = 0, int b = 0) {
-		x = a, y = b;
-	}
+    int x, y;
+    Cor(int a = 0, int b = 0)
+    {
+        x = a, y = b;
+    }
 };
 
+
 class GameSetting {
-public:
-	static const int window_width = 80;
-	static const int window_height = 40;
 	
-	void init(); // åˆå§‹åŒ–
+public:
+	// ÏñËØ¿í¸ß±È 12:16
+	static const int window_width = 42; // ÏëÒªµÄ·¶Î§ + 22
+	static const int window_height = 22; // ÏëÒªµÄ·¶Î§ + 2
+	// Ä¬ÈÏ·¶Î§£º 20  20
+	// ×¢ÒâĞŞ¸ÄºóÆÁÄ»ĞÅÏ¢»áÆ«ÒÆ£¬ĞèÒª×Ô¼ºµ÷Õû
+	
+	void init(); // ³õÊ¼»¯
 };

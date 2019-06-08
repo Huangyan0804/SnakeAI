@@ -1,6 +1,8 @@
-﻿#pragma once
+#pragma once
+#include "GameSetting.h"
 #include <vector>
-#include"GameSetting.h"
+using namespace std;
+
 class Food {
 private:
     Cor food_pos;
@@ -8,6 +10,7 @@ private:
 public:
     Cor get_food();
     Food() {}
-    void refresh_food(std::vector<Cor> &v);
     void show_food();
+    void refresh_food(std::vector<Cor> v);
+    
 };
