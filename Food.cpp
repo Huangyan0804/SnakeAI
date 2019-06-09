@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"
@@ -22,10 +22,10 @@ Cor Food::get_food()
 void Food::show_food()
 {
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(handle, 68); // ÉèÖÃºìÉ«
+    SetConsoleTextAttribute(handle, 68); // è®¾ç½®çº¢è‰²
     gotoxy(food_pos.x, food_pos.y);
     cout << "@";
-    SetConsoleTextAttribute(handle, 7); // »Ö¸´ÑÕÉ«
+    SetConsoleTextAttribute(handle, 7); // æ¢å¤é¢œè‰²
 }
 
 

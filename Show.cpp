@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Show.h"
 #include "Food.h"
 #include "GameSetting.h"
@@ -22,19 +22,19 @@ void Show::show_start(Snake& snake)
     gotoxy(0, 5);
     printf("  ########################################\n");
     printf("  #                                      #\n");
-    printf("  #         »¶Ó­À´µ½Ì°³ÔÉßÓÎÏ·           #\n");
+    printf("  #         æ¬¢è¿æ¥åˆ°è´ªåƒè›‡æ¸¸æˆ           #\n");
     printf("  #                                      #\n");
-    printf("  #           ÇëÑ¡ÔñÓÎÏ·Ä£Ê½£º           #\n");
+    printf("  #           è¯·é€‰æ‹©æ¸¸æˆæ¨¡å¼ï¼š           #\n");
     printf("  #                                      #\n");
-    printf("  #           1. ÊÖ¶¯²Ù×÷Ä£Ê½            #\n");
+    printf("  #           1. æ‰‹åŠ¨æ“ä½œæ¨¡å¼            #\n");
     printf("  #                                      #\n");
-    printf("  #           2. AIÖÇÄÜÄ£Ê½              #\n");
+    printf("  #           2. AIæ™ºèƒ½æ¨¡å¼              #\n");
     printf("  #                                      #\n");
     printf("  ########################################\n");
 
     while (true) {
         gotoxy(12, 17);
-        
+
         char input = _getch();
         if (input == '1') {
             snake.model = true;
@@ -43,20 +43,20 @@ void Show::show_start(Snake& snake)
             snake.model = false;
             break;
         } else {
-            cout << "ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë" << endl;
+            cout << "è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
         }
     }
     system("cls");
     gotoxy(0, 5);
     printf("  ########################################\n");
     printf("  #                                      #\n");
-    printf("  #        ¼üÅÌ W A S D ¿ØÖÆ·½Ïò         #\n");
+    printf("  #        é”®ç›˜ W A S D æ§åˆ¶æ–¹å‘         #\n");
     printf("  #                                      #\n");
-    printf("  #         + / - ¿ØÖÆÓÎÏ·ËÙ¶È           #\n");
+    printf("  #         + / - æ§åˆ¶æ¸¸æˆé€Ÿåº¦           #\n");
     printf("  #                                      #\n");
-    printf("  #         ¿Õ¸ñÇĞ»»AI/ÈË¹¤Ä£Ê½          #\n");
+    printf("  #         ç©ºæ ¼åˆ‡æ¢AI/æ‰‹åŠ¨æ¨¡å¼          #\n");
     printf("  #                                      #\n");
-    printf("  #          °´ÈÎÒâ¼ü¿ªÊ¼ÓÎÏ·            #\n");
+    printf("  #          æŒ‰ä»»æ„é”®å¼€å§‹æ¸¸æˆ            #\n");
     printf("  #                                      #\n");
     printf("  ########################################\n");
     _getch();
@@ -65,19 +65,19 @@ void Show::show_start(Snake& snake)
 void Show::show_map()
 {
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(handle, 119); // ÉèÖÃ°×É«
-    // ÉÏ±ß¿ò
+    SetConsoleTextAttribute(handle, 119); // è®¾ç½®ç™½è‰²
+    // ä¸Šè¾¹æ¡†
     for (int i = 0; i < GameSetting::window_width; i++) {
 
         cout << "#";
     }
-    // ×ó±ß¿ò
+    // å·¦è¾¹æ¡†
     for (int i = 1; i < GameSetting::window_height - 1; i++) {
         gotoxy(0, i);
         cout << "#";
     }
 
-    // ÖĞ¼ä·Ö½çÏß
+    // ä¸­é—´åˆ†ç•Œçº¿
     for (int i = 1; i < GameSetting::window_height - 1; i++) {
         gotoxy(GameSetting::window_width - 21, i);
         cout << "#";
@@ -88,13 +88,13 @@ void Show::show_map()
         cout << "#";
     }
 
-    // ÓÒ±ß¿ò
+    // å³è¾¹æ¡†
     for (int i = 1; i < GameSetting::window_height - 1; i++) {
         gotoxy(GameSetting::window_width - 1, i);
         cout << "#";
     }
 
-    // ÏÂ±ß¿ò
+    // ä¸‹è¾¹æ¡†
     gotoxy(0, GameSetting::window_height - 1);
     for (int i = 0; i < GameSetting::window_width; i++) {
         cout << "#";
@@ -105,39 +105,39 @@ void Show::show_score(Snake& s)
 {
 
     gotoxy(GameSetting::window_width - 19, 2);
-    cout << "µ±Ç°ÓÎÏ·ËÙ¶È: " << setfill('0') << setw(3) << 100 - (s.get_speed() / 10) << endl;
+    cout << "å½“å‰æ¸¸æˆé€Ÿåº¦: " << setfill('0') << setw(3) << 100 - (s.get_speed() / 10) << endl;
     gotoxy(GameSetting::window_width - 19, 4);
-    cout << "µ±Ç°Íæ¼Ò·ÖÊı: " << score << endl;
+    cout << "å½“å‰ç©å®¶åˆ†æ•°: " << score << endl;
 }
 
 int last_score[10] = { 0 };
 void Show::show_last_score()
 {
     gotoxy(GameSetting::window_width - 18, 6);
-    cout << "ÀúÊ··ÖÊıÅÅĞĞ°ñ: " << endl;
+    cout << "å†å²åˆ†æ•°æ’è¡Œæ¦œ: " << endl;
     int num = 3;
     int k = 1;
     ifstream fin("last-score.txt");
     for (int i = 0; i < num; i++) {
-        fin >> last_score[i + 1];
+        fin >> last_score[i];
     }
     fin.close();
     for (int i = 8; i < 8 + 2 * num; i += 2, k++) {
         gotoxy(GameSetting::window_width - 14, i);
-        cout << k << ": " << last_score[k] << endl;
+        cout << k << ": " << last_score[k - 1] << endl;
     }
 }
 
 void Show::show_gameinfo()
 {
     gotoxy(GameSetting::window_width - 17, GameSetting::window_height - 7);
-    cout << "ÓÎÏ·²Ù×÷ËµÃ÷£º" << endl;
+    cout << "æ¸¸æˆæ“ä½œè¯´æ˜ï¼š" << endl;
     gotoxy(GameSetting::window_width - 20, GameSetting::window_height - 5);
-    cout << "W ÉÏ S ÏÂ A ×ó D ÓÒ" << endl;
+    cout << "W ä¸Š S ä¸‹ A å·¦ D å³" << endl;
     gotoxy(GameSetting::window_width - 20, GameSetting::window_height - 4);
-    cout << "  +  ¼ÓËÙ -  ¼õËÙ" << endl;
+    cout << "  +  åŠ é€Ÿ -  å‡é€Ÿ" << endl;
     gotoxy(GameSetting::window_width - 20, GameSetting::window_height - 3);
-    cout << "   ¿Õ¸ñ ÇĞ»»Ä£Ê½" << endl;
+    cout << "   ç©ºæ ¼ åˆ‡æ¢æ¨¡å¼" << endl;
 }
 
 bool Show::show_game_over()
@@ -158,18 +158,18 @@ bool Show::show_game_over()
     gotoxy(0, 7);
     printf("  ########################################\n");
     printf("  #                                      #\n");
-    printf("  #             ±¾´ÎÓÎÏ·½áÊø             #\n");
+    printf("  #             æœ¬æ¬¡æ¸¸æˆç»“æŸ             #\n");
     printf("  #                                      #\n");
-    printf("  #           ±¾´ÎµÃ·Ö£º%03d ·Ö           #\n", score);
+    printf("  #           æœ¬æ¬¡å¾—åˆ†ï¼š%03d åˆ†           #\n", score);
     printf("  #                                      #\n");
-    printf("  #           °´»Ø³µ¼ü½áÊøÓÎÏ·           #\n");
+    printf("  #           æŒ‰å›è½¦é”®ç»“æŸæ¸¸æˆ           #\n");
     printf("  #                                      #\n");
     printf("  ########################################\n");
-	
-	char input = '1';
+
+    char input = '1';
     while (input != 13) {
-		input = _getch();
-	}
+        input = _getch();
+    }
     return true;
     //SetConsoleTextAttribute(handle, 7);
 }

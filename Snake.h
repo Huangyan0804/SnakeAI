@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Food.h"
 #include "GameSetting.h"
 #include <vector>
@@ -20,7 +20,7 @@ public:
     bool get_model();
 
     int get_speed();
-    int map[100][100], tmap[100][100]; // ¹À¼Û
+    int map[100][100], tmap[100][100]; // ä¼°ä»·
     vector<Cor> snake_body;
     vector<Cor> tempsnake;
     Snake();

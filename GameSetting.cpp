@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <Windows.h>
 #include<ctime>
 #include "GameSetting.h"
@@ -9,7 +9,7 @@ using namespace std;
 void GameSetting::init()
 {
 	CONSOLE_CURSOR_INFO cursor_info = { 1, 0 };
-	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor_info); //Òş²ØÊäÈë·ûºÅ
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor_info); //éšè—è¾“å…¥ç¬¦å·
 
 	char buffer[32];
 	sprintf_s(buffer, "mode con cols=%d lines=%d", window_width + 2, window_height + 1);
@@ -17,7 +17,7 @@ void GameSetting::init()
 	::SetConsoleOutputCP(936);
 	srand((unsigned int)time(0));
 
-	// ĞŞ¸Ä×ÖÌå»ñµÃ¸üºÃÌåÑé
+	// ä¿®æ”¹å­—ä½“è·å¾—æ›´å¥½ä½“éªŒ
 	CONSOLE_FONT_INFOEX font;
         font.cbSize = sizeof(CONSOLE_FONT_INFOEX);
         font.nFont = 0;

@@ -1,4 +1,4 @@
-
+ï»¿
 #include "Snake.h"
 #include "Food.h"
 #include "GameSetting.h"
@@ -35,14 +35,14 @@ Snake::Snake()
     memset(tmap, 0, sizeof tmap);
     food.refresh_food(snake_body);
     food.show_food();
-    // ÒÆ¶¯·½ÏòÏòÓÒ
+    // ç§»åŠ¨æ–¹å‘å‘å³
     head_dir = 2;
     ai_speed = 50;
     man_speed = 150;
     snake_live = true;
     Cor snake_head;
 
-    // ³õÊ¼ÉßÉí
+    // åˆå§‹è›‡èº«
     snake_head.x = move_size.x / 2;
     snake_head.y = move_size.y / 2;
     this->snake_body.push_back(snake_head);
@@ -85,7 +85,7 @@ bool Snake::is_eat_food()
 void Snake::show_snake()
 {
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(handle, 87); // ÉèÖÃÂÌÉ« 34/47 ´¿À¶51 *55 ºì 6x ´¿×ÏÉ« 85 *87
+    SetConsoleTextAttribute(handle, 87); // è®¾ç½®ç»¿è‰² 34/47 çº¯è“51 *55 çº¢ 6x çº¯ç´«è‰² 85 *87
     gotoxy(snake_body[0].x, snake_body[0].y);
     cout << "*";
     SetConsoleTextAttribute(handle, 47);
@@ -94,7 +94,7 @@ void Snake::show_snake()
         cout << "*";
     }
 
-    SetConsoleTextAttribute(handle, 7); // »Ö¸´ÑÕÉ«
+    SetConsoleTextAttribute(handle, 7); // æ¢å¤é¢œè‰²
 }
 
 void Snake::snake_erase()
@@ -122,7 +122,7 @@ bool Snake::is_alive()
 
 bool Snake::is_body(int x, int y, vector<Cor>& snake)
 {
-    // ¿´´«µÄ²ÎÊı
+    // çœ‹ä¼ çš„å‚æ•°
     for (int i = 0; i < snake.size(); i++) {
         if (x == snake[i].x && y == snake[i].y)
             return true;

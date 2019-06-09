@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 
 using namespace std;
@@ -15,11 +15,11 @@ struct Cor {
 class GameSetting {
 	
 public:
-	// ÏñËØ¿í¸ß±È 12:16
-	static const int window_width = 42; // ÏëÒªµÄ·¶Î§ + 22
-	static const int window_height = 22; // ÏëÒªµÄ·¶Î§ + 2
-	// Ä¬ÈÏ·¶Î§£º 20  20
-	// ×¢ÒâĞŞ¸ÄºóÆÁÄ»ĞÅÏ¢»áÆ«ÒÆ£¬ĞèÒª×Ô¼ºµ÷Õû
+	// åƒç´ å®½é«˜æ¯” 12:16
+	static const int window_width = 42; // æƒ³è¦çš„èŒƒå›´ + 22
+	static const int window_height = 22; // æƒ³è¦çš„èŒƒå›´ + 2
+	// é»˜è®¤èŒƒå›´ï¼š 20  20
+	// æ³¨æ„ä¿®æ”¹åå±å¹•ä¿¡æ¯ä¼šåç§»ï¼Œéœ€è¦è‡ªå·±è°ƒæ•´
 	
-	void init(); // ³õÊ¼»¯
+	void init(); // åˆå§‹åŒ–
 };

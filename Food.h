@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "GameSetting.h"
 #include <vector>
 using namespace std;

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"
@@ -39,7 +39,6 @@ int main()
             snake.ai_listen_keboard();
         }
         if (!snake.is_alive()) {
-            _getch();
             if (show.show_game_over()) {
                 break;
             }
