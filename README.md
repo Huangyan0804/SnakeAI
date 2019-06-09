@@ -7,7 +7,7 @@
 ## 序言
 
 > 之前在网上看到了一张很火的贪吃蛇 GIF。当时由于没怎么接触算法只能喊666，既然学了一年的程序设计， 那么这次就来尝试写一个贪吃蛇AI吧
-![others](pictures/others.gif)
+>>![others](pictures/others.gif)
 
 
 ## 总体概况
