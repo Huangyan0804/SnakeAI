@@ -49,7 +49,7 @@ int main()
             snake.ai_find_path();
             snake.ai_listen_keboard();
         }
-        if (!snake.is_alive()) {
+        if (!snake.is_alive() || !snake.get_snake_live()) {
             if (show.show_game_over()) {
                 break;
             }

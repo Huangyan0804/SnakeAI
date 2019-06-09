@@ -18,7 +18,7 @@ public:
     bool model;
     Food food;
     bool get_model();
-
+    bool get_snake_live();
     int get_speed();
     int map[100][100], tmap[100][100]; // 估价
     vector<Cor> snake_body;

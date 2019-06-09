@@ -66,6 +66,11 @@ bool Snake::get_model()
     return model;
 }
 
+bool Snake::get_snake_live()
+{
+    return snake_live;
+}
+
 bool Snake::is_eat_food()
 {
     Cor food_pos = food.get_food();
@@ -317,7 +322,9 @@ void Snake::man_listen_keyboard()
                 man_speed = 0;
         } else if (input == ' ') {
             model = !model;
-        }
+        } else if (input == 27) {
+            snake_live = false;
+		}
     }
     Cor head = snake_body[0];
     if (head_dir == 1) {
