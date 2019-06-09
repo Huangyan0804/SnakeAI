@@ -24,7 +24,7 @@ using namespace std;
 
 	Editer: HUANG Yan
 	Time: 2019:6:7
-	project: Greedy Snake
+	project: Snake
 
 */
 
@@ -33,7 +33,7 @@ int main()
     GameSetting setting;
     Show show;
     Snake snake;
-    
+
     setting.init();
     show.show_start(snake);
     show.show_map();
