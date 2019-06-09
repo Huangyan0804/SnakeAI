@@ -109,10 +109,12 @@ bool Snake::is_alive()
         snake_live = false;
         return false;
     }
-    for (int i = 1; i < snake_body.size(); i++) {
-        if (snake_body[0].x == snake_body[i].x && snake_body[0].y == snake_body[i].y) {
-            snake_live = false;
-            return false;
+    if (model) {
+        for (int i = 1; i < snake_body.size(); i++) {
+            if (snake_body[0].x == snake_body[i].x && snake_body[0].y == snake_body[i].y) {
+                snake_live = false;
+                return false;
+            }
         }
     }
     return true;
