@@ -120,14 +120,12 @@ bool Snake::is_alive()
     return true;
 }
 
-bool Snake::is_body(int x, int y, vector<Cor>& snake)
+void Snake::is_body(vector<Cor>& snake, int pmap[][100])
 {
     // 看传的参数
     for (int i = 0; i < snake.size(); i++) {
-        if (x == snake[i].x && y == snake[i].y)
-            return true;
+        pmap[snake[i].x][snake[i].y] = SNAKE;
     }
-    return false;
 }
 
 bool Snake::can_move(Cor pos)
@@ -142,18 +140,26 @@ bool Snake::can_move(Cor pos)
 void Snake::map_reset(vector<Cor>& snake, int pmap[][100])
 {
     // psnake pmap
+
     Cor f = food.get_food();
     for (int i = 1; i < move_size.x; i++) {
         for (int j = 1; j < move_size.y; j++) {
-            if (i == f.x && j == f.y) {
+            /*
+			if (i == f.x && j == f.y) {
                 pmap[i][j] = FOOD;
             } else if (is_body(i, j, snake)) {
                 pmap[i][j] = SNAKE;
             } else {
                 pmap[i][j] = UNDEFINE;
             }
+			*/
+
+            pmap[i][j] = UNDEFINE;
         }
     }
+    is_body(snake, pmap);
+
+    pmap[f.x][f.y] = FOOD;
 }
 
 bool Snake::map_bfs(Cor pfood, vector<Cor>& snake, int pmap[][100])
@@ -161,7 +167,8 @@ bool Snake::map_bfs(Cor pfood, vector<Cor>& snake, int pmap[][100])
     queue<Cor> q;
     Cor snake_head = snake[0];
     q.push(pfood);
-    bool vis[65][45] = { 0 };
+    // 随尺寸变化
+    bool vis[30][30] = { 0 };
     bool found = false;
     while (!q.empty()) {
         Cor front = q.front();
@@ -364,7 +371,7 @@ void Snake::vertual_short_move()
     while (!eat_food) {
         map_bfs(food.get_food(), tempsnake, tmap);
         int move = find_short_path(tempsnake, tmap);
-
+        
         Cor temphead = tempsnake[0];
         temphead.x += dir[move][0];
         temphead.y += dir[move][1];
@@ -385,10 +392,12 @@ int Snake::find_path()
 {
     int best_move = ERR;
     vertual_short_move();
-    if (find_path_to_tail()) {
+    if (find_path_to_tail() ) {
         return find_short_path(snake_body, map);
+    } else {
+        best_move = move_to_tail();
     }
-    best_move = move_to_tail();
+
     return best_move;
 }
 
@@ -408,6 +417,8 @@ void Snake::ai_find_path()
         ai_make_move(best_move);
 
     } else {
+        
+        snake_live = false;
         return;
     }
 }

@@ -29,7 +29,7 @@ public:
     bool is_eat_food();
     void snake_erase();
     bool is_alive();
-    bool is_body(int x, int y, vector<Cor>& snake);
+    void is_body(vector<Cor>& snake, int pmap[][100]);
     bool can_move(Cor pos);
     void map_reset( vector<Cor>& snake, int pmap[][100]);
     bool map_bfs(Cor food, vector<Cor>& snake, int pmap[][100]);

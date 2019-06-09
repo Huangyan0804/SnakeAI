@@ -13,7 +13,6 @@
 #include <vector>
 using namespace std;
 
-
 Cor Food::get_food()
 {
     return food_pos;
@@ -28,16 +27,16 @@ void Food::show_food()
     SetConsoleTextAttribute(handle, 7); // 恢复颜色
 }
 
-
-void Food::refresh_food(vector<Cor> v)
+void Food::refresh_food(vector<Cor>& v)
 {
-    food_pos.x = rand() % (GameSetting::window_width - 30) + 1;
-    food_pos.y = rand() % (GameSetting::window_height - 2) + 1;
+    // 随尺寸变化
+    food_pos.x = (rand() % (GameSetting::window_width - 22)) + 1;
+    food_pos.y = (rand() % (GameSetting::window_height - 2)) + 1;
 
     for (int i = 0; i < v.size(); i++) {
         if (v[i].x == food_pos.x && v[i].y == food_pos.y) {
-            food_pos.x = rand() % (GameSetting::window_width - 30) + 1;
-            food_pos.y = rand() % (GameSetting::window_height - 2) + 1;
+            food_pos.x = (rand() % (GameSetting::window_width - 22)) + 1;
+            food_pos.y = (rand() % (GameSetting::window_height - 2)) + 1;
             i = 0;
         }
     }

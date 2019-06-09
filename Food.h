@@ -11,6 +11,6 @@ public:
     Cor get_food();
     Food() {}
     void show_food();
-    void refresh_food(std::vector<Cor> v);
+    void refresh_food(std::vector<Cor>& v);
     
 };
