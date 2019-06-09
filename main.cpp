@@ -1,4 +1,7 @@
 ﻿#pragma once
+
+/* coding: UTF-8 */
+
 #include "Food.h"
 #include "GameSetting.h"
 #include "Show.h"
@@ -16,6 +19,14 @@
 #include <vector>
 
 using namespace std;
+
+/*
+
+	Editer: HUANG Yan
+	Time: 2019:6:7
+	project: Greedy Snake
+
+*/
 
 int main()
 {
